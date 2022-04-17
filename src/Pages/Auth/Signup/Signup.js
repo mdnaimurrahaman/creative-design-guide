@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
-import './Login.css'
+import '../../Auth/Login/Login.css'
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Signup = () => {
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
+        confirmPass: "",
     })
     const [errors, SetErrors] = useState({
         email: "",
@@ -18,11 +19,11 @@ const Login = () => {
     })
 
     const [
-        signInWithEmailAndPassword,
+        createUserWithEmailAndPassword,
         user,
         loading,
         hookError,
-      ] = useSignInWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
 
 
     const handleEmailChange = (e)=> {
@@ -48,10 +49,21 @@ const Login = () => {
         }
         
     }
+    const handleConfirmPasswordChange = (e)=>{
+        if (e.target.value === userInfo.password){
+            setUserInfo({...userInfo,confirmPass: e.target.value});
+            SetErrors({...errors, password:""})
+        } else{
+            SetErrors({...errors, password:"password don't match"});
+            setUserInfo({...userInfo, confirmPass:""})
+        }
+        
+    }
 
     const handleLogin = (e) =>{
         e.preventDefault();
-        signInWithEmailAndPassword(userInfo.email,userInfo.password)
+        console.log(userInfo);
+        createUserWithEmailAndPassword(userInfo.email,userInfo.password)
     }
 
     useEffect(()=>{
@@ -69,21 +81,31 @@ const Login = () => {
         }
     },[hookError])
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/"
+
+   useEffect(()=>{
+    if(user){
+        navigate(from)
+    }
+   },[user])
+
     return (
         <div className='login-container'>
-            <div className='login-title'>LOGIN</div>
+            <div className='login-title'>SIGNUP</div>
             <form className='login-form' onSubmit={handleLogin}>
                 <input type="text" placeholder='Your Email' onChange={handleEmailChange} />
                 {errors?.email && <p className='error-message'>{errors.email}</p>}
                 <input type="password" placeholder='password' onChange={handlePasswordChange}/>
                 {errors?.password && <p className='error-message'>{errors.password}</p>}
-                <button>Login</button>
+                <input type="password" placeholder='confirm password' onChange={handleConfirmPasswordChange}/>
+                <button>SignUp</button>
 
                 <ToastContainer></ToastContainer>
-                <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
             </form>
         </div>
     );
 };
 
-export default Login;
+export default Signup;
