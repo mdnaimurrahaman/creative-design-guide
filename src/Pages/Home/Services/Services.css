@@ -1,0 +1,11 @@
+.services-container{
+    margin: 0;
+    padding: 0;
+}
+.services-title{
+    color: #f9a791;
+}
+/* .services-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+} */
