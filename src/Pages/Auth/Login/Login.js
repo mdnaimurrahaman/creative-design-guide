@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import './Login.css'
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [userInfo, setUserInfo] = useState({
@@ -23,6 +23,8 @@ const Login = () => {
         loading,
         hookError,
       ] = useSignInWithEmailAndPassword(auth);
+
+      const [signInWithGoogle, googleUser, loading2, googleError]=useSignInWithGoogle(auth);
 
 
     const handleEmailChange = (e)=> {
@@ -54,20 +56,34 @@ const Login = () => {
         signInWithEmailAndPassword(userInfo.email,userInfo.password)
     }
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/"
+
+   useEffect(()=>{
+    if(user){
+        navigate(from,{replace:true});
+    }
+   },[user])
+
     useEffect(()=>{
-        if(hookError){
-            switch(hookError?.code){
+        const error = hookError || googleError
+        if(error){
+            switch(error?.code){
                 case "auth/invalid-email":
                     toast('Invalid email provided, please provide a valid email')
                     break;
                 case "auth/invalid-password":
                     toast("Wrong password. Please provide a right password.")
                     break
+                case "auth/popup-closed-by-user":
+                    toast( "The popup has been closed by the user before finalizing the operation.")
+                    break
                     default:
                         toast("something went wrong")
             }
         }
-    },[hookError])
+    },[hookError, googleError])
 
     return (
         <div className='login-container'>
@@ -82,6 +98,7 @@ const Login = () => {
                 <ToastContainer></ToastContainer>
                 <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
             </form>
+            <button onClick={()=> signInWithGoogle()}>Google SignIn</button>
         </div>
     );
 };

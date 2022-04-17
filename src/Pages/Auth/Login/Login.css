@@ -6,7 +6,7 @@
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    background: #ecf0f3;
+    background: #fde7e1;
     box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 }
 
@@ -16,7 +16,7 @@
     margin-top: 10px;
     font-weight: 900;
     font-size: 1.8rem;
-    color: #1da1f2;
+    color: #fd8c6c;
     letter-spacing: 1px;
 }
 
@@ -38,7 +38,7 @@
 
 .login-container label {
     margin-bottom: 4px;
-    color: gray;
+    color: rgb(230, 217, 217);
     margin: 15px 0 5px 5px;
     
 }
@@ -61,7 +61,7 @@
 .login-container button {
     color: white;
     margin-top: 20px;
-    background: #1da1f2;
+    background: #f9a791;
     height: 40px;
     border-radius: 20px;
     cursor: pointer;
