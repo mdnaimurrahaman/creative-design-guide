@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import '../../Auth/Login/Login.css'
 import { ToastContainer, toast } from 'react-toastify';
@@ -24,6 +24,8 @@ const Signup = () => {
         loading,
         hookError,
       ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
+
+      const [signInWithGoogle, googleUser, loading2, googleError]=useSignInWithGoogle(auth);
 
 
     const handleEmailChange = (e)=> {
@@ -67,19 +69,23 @@ const Signup = () => {
     }
 
     useEffect(()=>{
+        const error = hookError || googleError;
         if(hookError){
-            switch(hookError?.code){
+            switch(error?.code){
                 case "auth/invalid-email":
                     toast('Invalid email provided, please provide a valid email')
                     break;
                 case "auth/invalid-password":
                     toast("Wrong password. Please provide a right password.")
                     break
+                case "auth/popup-closed-by-user":
+                        toast( "The popup has been closed by the user before finalizing the operation.")
+                        break
                     default:
                         toast("something went wrong")
             }
         }
-    },[hookError])
+    },[hookError, googleError])
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -104,6 +110,7 @@ const Signup = () => {
 
                 <ToastContainer></ToastContainer>
             </form>
+            <button onClick={()=> signInWithGoogle()}>Google SignIn</button>
         </div>
     );
 };
