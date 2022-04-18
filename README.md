@@ -10,6 +10,6 @@
 ###### Firebase 
 ###### Firebase Hooks
 ###### React-router-dom
-###### React Bootsrap 
+###### Bootsrap 5
 ###### React-toastify
 ###### React Icons

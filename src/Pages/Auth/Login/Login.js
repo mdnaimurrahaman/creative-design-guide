@@ -98,7 +98,7 @@ const Login = () => {
         }
     },[hookError, googleError])
     
-    const handleGoogle = () =>{
+    const handleGoogleSignIn = () =>{
         signInWithGoogle();
         navigate("/")
     }
@@ -123,7 +123,7 @@ const Login = () => {
                 <p className='text-center mt-3'>Forget password? <Link onClick={resetPassword} className='sign-link fw-bold pe-auto text-decoration-none' to="">Reset password</Link></p>
                 
             </form>
-            <button onClick={handleGoogle}>Google SignIn</button>
+            <button onClick={handleGoogleSignIn}>Google SignIn</button>
             <p className='text-center mt-3'>Don't have an account? <Link className='sign-link fw-bold pe-auto text-decoration-none' to="/signup">Sign up</Link></p>
         </div>
     );

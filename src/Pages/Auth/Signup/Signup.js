@@ -95,7 +95,12 @@ const Signup = () => {
     if(user){
         navigate(from,{replace:true})
     }
-   },[user])
+   },[from, navigate, user])
+
+   const handleGoogleSignIn = () =>{
+    signInWithGoogle();
+    navigate("/")
+}
 
     return (
 
@@ -113,7 +118,7 @@ const Signup = () => {
 
                 <ToastContainer></ToastContainer>
             </form>
-            <button onClick={()=> signInWithGoogle()}>Google SignIn</button>
+            <button onClick={handleGoogleSignIn}>Google SignIn</button>
         </div>
     );
 };
