@@ -96,9 +96,11 @@ const Login = () => {
                 <button>Login</button>
 
                 <ToastContainer></ToastContainer>
-                <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+                <p className='text-center mt-3'>Forget password? <Link className='sign-link fw-bold pe-auto text-decoration-none' to="">Reset password</Link></p>
+                
             </form>
             <button onClick={()=> signInWithGoogle()}>Google SignIn</button>
+            <p className='text-center mt-3'>Don't have an account? <Link className='sign-link fw-bold pe-auto text-decoration-none' to="/signup">Sign up</Link></p>
         </div>
     );
 };

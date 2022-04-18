@@ -109,7 +109,7 @@ const Signup = () => {
                 <input type="password" placeholder='confirm password' onChange={handleConfirmPasswordChange}/>
                 <button>SignUp</button>
 
-                <p>Already have and account ? <Link to="/login" className='pe-auto text-decoration-none'>SignIn</Link></p>
+                <p className='text-center mt-3'>Already have and account ? <Link to="/login" className='sign-link fw-bold pe-auto text-decoration-none'>SignIn</Link></p>
 
                 <ToastContainer></ToastContainer>
             </form>

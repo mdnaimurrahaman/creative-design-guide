@@ -3,11 +3,11 @@
     width: 350px;
     margin: 4rem auto;
     height: 500px;
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 40px;
     box-sizing: border-box;
     background: #fde7e1;
-    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+    box-shadow: 14px 14px 20px #f5dbcf, -14px -14px 20px white;
 }
 
 
@@ -44,7 +44,7 @@
 }
 
 .login-container input::placeholder {
-    color: gray;
+    color: rgb(122, 113, 113);
 }
 
 .login-container input {
@@ -54,8 +54,8 @@
     padding-left: 20px;
     height: 50px;
     font-size: 14px;
-    border-radius: 50px;
-    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+    border-radius: 8px;
+    box-shadow: inset 6px 6px 6px #fad6c9, inset -6px -6px 6px white;
 }
 
 .login-container button {
@@ -63,15 +63,19 @@
     margin-top: 20px;
     background: #f9a791;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 900;
-    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    box-shadow: 6px 6px 6px #ebd9cc, -6px -6px 6px white;
     transition: 0.5s;
 }
 
 .login-container button:hover {
     box-shadow: none;
+}
+
+.sign-link{
+    color: #f36e49;
 }
 
 
