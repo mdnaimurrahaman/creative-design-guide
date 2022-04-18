@@ -1,3 +1,11 @@
+.progress-title{
+    color: #f9a791;
+}
+.progress-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
 .progress-info h1{
     color: #e4623d;
     font-weight: 700;
@@ -6,4 +14,15 @@
     background-color: #8b88881c;
     padding: 30px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(240, 121, 62, 0.334) 0px 10px 10px -10px;
 }
+
+@media only screen and (max-width: 600px) {
+    .progress-container{
+        grid-template-columns: 1fr;
+    }
+  }

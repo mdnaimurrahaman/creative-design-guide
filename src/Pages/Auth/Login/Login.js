@@ -69,8 +69,14 @@ const Login = () => {
    },[user])
 
    const resetPassword = async() => {
-    await sendPasswordResetEmail(userInfo.email);
-    toast('Sent email reset your password');
+       if(userInfo.email){
+        await sendPasswordResetEmail(userInfo.email);
+        toast('Sent email reset your password');
+       }
+       else{
+        toast('please enter your email address');
+       }
+    
    }
 
     useEffect(()=>{
