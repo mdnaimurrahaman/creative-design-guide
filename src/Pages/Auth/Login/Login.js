@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import './Login.css'
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -25,6 +25,8 @@ const Login = () => {
       ] = useSignInWithEmailAndPassword(auth);
 
       const [signInWithGoogle, googleUser, loading2, googleError]=useSignInWithGoogle(auth);
+
+      const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth);
 
 
     const handleEmailChange = (e)=> {
@@ -66,6 +68,11 @@ const Login = () => {
     }
    },[user])
 
+   const resetPassword = async() => {
+    await sendPasswordResetEmail(userInfo.email);
+    toast('Sent email reset your password');
+   }
+
     useEffect(()=>{
         const error = hookError || googleError
         if(error){
@@ -96,7 +103,7 @@ const Login = () => {
                 <button>Login</button>
 
                 <ToastContainer></ToastContainer>
-                <p className='text-center mt-3'>Forget password? <Link className='sign-link fw-bold pe-auto text-decoration-none' to="">Reset password</Link></p>
+                <p className='text-center mt-3'>Forget password? <Link onClick={resetPassword} className='sign-link fw-bold pe-auto text-decoration-none' to="">Reset password</Link></p>
                 
             </form>
             <button onClick={()=> signInWithGoogle()}>Google SignIn</button>
