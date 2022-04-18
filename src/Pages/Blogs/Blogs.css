@@ -1,0 +1,19 @@
+.blogs-title{
+    color: rgb(253, 142, 91);
+}
+
+.auth-name li{
+    list-style: none;
+    margin-right: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+    .auth-name{
+        flex-direction: column;
+    }
+  }
+@media only screen and (max-width: 600px) {
+    .first-qus{
+        margin-bottom: 20px;
+    }
+  }

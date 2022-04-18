@@ -4,7 +4,7 @@ import auth from '../../../firebase.init';
 import '../../Auth/Login/Login.css'
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
     const [userInfo, setUserInfo] = useState({
@@ -98,6 +98,7 @@ const Signup = () => {
    },[user])
 
     return (
+
         <div className='login-container'>
             <div className='login-title'>SIGNUP</div>
             <form className='login-form' onSubmit={handleLogin}>
@@ -107,6 +108,8 @@ const Signup = () => {
                 {errors?.password && <p className='error-message'>{errors.password}</p>}
                 <input type="password" placeholder='confirm password' onChange={handleConfirmPasswordChange}/>
                 <button>SignUp</button>
+
+                <p>Already have and account ? <Link to="/login" className='pe-auto text-decoration-none'>SignIn</Link></p>
 
                 <ToastContainer></ToastContainer>
             </form>
