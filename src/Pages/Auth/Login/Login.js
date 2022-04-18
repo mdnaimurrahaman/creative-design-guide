@@ -101,8 +101,13 @@ const Login = () => {
     const handleGoogle = () =>{
         signInWithGoogle();
         navigate("/")
-
     }
+
+    //   let from = location.state?.from?.pathname || "/";
+
+    //   if (user) {
+    //     navigate(from, { replace: true });
+    //   }
 
     return (
         <div className='login-container'>

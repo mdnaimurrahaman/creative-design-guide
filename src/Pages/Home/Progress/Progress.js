@@ -12,7 +12,7 @@ const Progress = () => {
                 </div>
                 <div className='progress-info'>
                     <h1>1500+</h1>
-                    <p>Total job completed</p>
+                    <p>Total Projects completed</p>
                 </div>
                 <div className='progress-info'>
                     <h1>650+</h1>
