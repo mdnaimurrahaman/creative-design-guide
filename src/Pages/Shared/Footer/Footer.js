@@ -38,7 +38,7 @@ const Footer = () => {
                         <a href=""></a>
                         </div>
                 </div>
-                <p class="copyright">©copyright all credit 2022 naimurrahaman</p>
+                <p class="copyright">&#9400; copyright all credit 2022 naimurrahaman</p>
             </div>
         </footer>
     </div>
