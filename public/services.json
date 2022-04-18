@@ -2,31 +2,31 @@
   {
     "id": "1",
     "name": "Logo Design",
-    "description": " This new watch is holding battery life super great! I am very happy with the functions of the watch. The watch faces that are available are nice and they update them quickly with new ones to choose from.",
+    "description": "A logo is a symbol made up of text and images that identifies a business. A good logo shows what a company does and what the brand values. Logo design is all about creating the perfect visual brand mark for a company.",
     "rating":"5.0",
-    "img": "https://i.ibb.co/mHVgKt4/ca5fc30c963723bca66762904eeab192.webp"
+    "img": "https://i.ibb.co/1Rdy2MR/original-31ca12c98318cd82f12ed4f03543075d.webp"
    
   },
   {
     "id": "2",
     "name": "Stationery Design",
-    "description": " This new watch is holding battery life super great! I am very happy with the functions of the watch. The watch faces that are available are nice and they update them quickly with new ones to choose from.",
+    "description": " Stationery design, then, refers to applying custom graphic art to these items as part of a branding strategy, to make them part of a brand's image commonly including logo design, name, and slogan plus graphic elements to make them pop.",
     "rating":"5.0",
-    "img": "https://i.ibb.co/mHVgKt4/ca5fc30c963723bca66762904eeab192.webp"
+    "img": "https://i.ibb.co/3SCmy7z/925ed61180f279d7814446c2df76a113.webp"
    
   },
   {
     "id": "3",
     "name": "Packaging",
-    "description": " This new watch is holding battery life super great! I am very happy with the functions of the watch. The watch faces that are available are nice and they update them quickly with new ones to choose from.",
+    "description": " ackaging keeps the world organized. Whether it’s a packet for your M&Ms, a hamper for your dirty laundry or the bottle that holds the delicious liquid particles of your beer together, the things we put things in are important!",
     "rating":"5.0",
-    "img": "https://i.ibb.co/mHVgKt4/ca5fc30c963723bca66762904eeab192.webp"
+    "img": "https://i.ibb.co/6tDJcB4/f074ff069803a074eb5e07cff23a0e79.webp"
    
   },
   {
     "id": "4",
     "name": "Brand identity",
-    "description":  " This new watch is holding battery life super great! I am very happy with the functions of the watch. The watch faces that are available are nice and they update them quickly with new ones to choose from.",
+    "description":  "Brand identity includes logos, typography, colors, packaging, and messaging, and it complements and reinforces the existing reputation of a brand. Brand identity attracts new customers to a brand while making existing customers feel at home. ",
     "rating":"5.0",
     "img": "https://i.ibb.co/mHVgKt4/ca5fc30c963723bca66762904eeab192.webp"
    
@@ -34,17 +34,17 @@
   {
     "id": "5",
     "name": "Printable",
-    "description": " This new watch is holding battery life super great! I am very happy with the functions of the watch. The watch faces that are available are nice and they update them quickly with new ones to choose from.",
+    "description": "Print design, a subset of graphic design, is a form of visual communication used to convey information to an audience through intentional aesthetic design printed on a tangible surface, designed to be printed on paper, as opposed to presented on a digital platform.",
     "rating":"5.0",
-    "img": "https://i.ibb.co/mHVgKt4/ca5fc30c963723bca66762904eeab192.webp"
+    "img": "https://i.ibb.co/K73MvbJ/original-97a9e26cc62df1a62f0fc10e791b1e89.webp"
    
   },
   {
     "id": "6",
-    "name": "Others Design",
-    "description": " This new watch is holding battery life super great! I am very happy with the functions of the watch. The watch faces that are available are nice and they update them quickly with new ones to choose from.",
+    "name": "oil painting",
+    "description": "Oil painting is the process of painting with pigments with a medium of drying oil as the binder. It has been the most common technique for artistic painting on wood panel or canvas for several centuries, spreading from Europe to the rest of the world. ",
     "rating":"5.0",
-    "img": "https://i.ibb.co/mHVgKt4/ca5fc30c963723bca66762904eeab192.webp"
+    "img": "https://i.ibb.co/MGDtJC6/original-8122f4f911411db869071467c6f20653.webp"
    
   }
 ]

@@ -1,0 +1,9 @@
+.progress-info h1{
+    color: #e4623d;
+    font-weight: 700;
+}
+.progress-info{
+    background-color: #8b88881c;
+    padding: 30px;
+    border-radius: 10px;
+}
